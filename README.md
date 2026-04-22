@@ -3,7 +3,7 @@
 A premium, interactive, and high-performance portfolio built with React, Framer Motion, and Three.js. This project features a stunning 3D space environment with parallax effects, dynamic typing animations, and a sleek glassmorphism UI.
 
 ## 🚀 Live Demo
-[View Live Site](https://portfolio-seven-xi-89.vercel.app/)
+[View Live Site]()
 
 ## ✨ Features
 - **Stellar 3D Background**: Interactive Three.js scene with planets (including Saturn), stars, and parallax movement.

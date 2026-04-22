@@ -71,11 +71,13 @@ const Hero = () => {
         </motion.div>
 
         <motion.button
+          whileHover={{ scale: 1.1, boxShadow: "0 0 40px rgba(37,99,235,0.6)" }}
+          whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 rounded-full font-black text-lg shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-300 hover:scale-105"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 rounded-full font-black text-lg transition-all duration-300 relative z-10"
         >
           Explore My Work
         </motion.button>
