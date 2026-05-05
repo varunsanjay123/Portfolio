@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaFileExcel, FaNodeJs } from 'react-icons/fa';
+import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaFileExcel, FaNodeJs, FaChartBar } from 'react-icons/fa';
 import { SiC, SiMysql, SiSpringboot } from 'react-icons/si';
-import { IoLogoTableau } from 'react-icons/io5';
 
 const Skills = () => {
   const skills = [
@@ -16,7 +15,7 @@ const Skills = () => {
     { name: 'SQL', icon: SiMysql, color: 'text-blue-300' },
     { name: 'GitHub', icon: FaGithub, color: 'text-gray-300' },
     { name: 'Excel', icon: FaFileExcel, color: 'text-green-500' },
-    { name: 'Tableau', icon: IoLogoTableau, color: 'text-indigo-400' },
+    { name: 'Power BI', icon: FaChartBar, color: 'text-yellow-500' },
   ];
 
   return (

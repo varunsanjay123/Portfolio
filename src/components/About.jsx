@@ -50,7 +50,7 @@ const About = () => {
                   I am a Computer Science student passionate about building real-world applications and exploring the cosmos of software development.
                 </p>
                 <p className="text-lg leading-relaxed mb-10 text-gray-300">
-                  Skilled in Java, C, React, HTML, CSS, JavaScript, with a strong emphasis on continuous learning and modern <span className="text-blue-400 font-bold">UI/UX design</span>.
+                  Skilled in Java, C, React, HTML, CSS, JavaScript, with a strong emphasis on continuous learning and modern UI/UX design.
                 </p>
                 <motion.a
                   whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(37,99,235,0.4)" }}

@@ -77,28 +77,12 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Inter-College Marketplace',
-      category: 'Development',
-      description: 'Platform for students to buy/sell products with authentication system',
-      image: projectImage,
-      demo: '',
-      github: 'https://github.com/varunsanjay123'
-    },
-    {
       title: 'Print-HUB',
       category: 'Development',
       description: 'Web platform for document printing with real-time tracking and admin panel',
       image: projectImage,
       demo: 'https://print-hub-4to1.vercel.app/',
       github: 'https://github.com/varunsanjay123/PrintHub'
-    },
-    {
-      title: 'Food Ordering System',
-      category: 'Development',
-      description: 'Developed a responsive food ordering web app enabling users to browse menus, manage carts, and place orders seamlessly',
-      image: projectImage,
-      demo: '#',
-      github: 'https://github.com/varunsanjay123/Food_Ordering_System'
     },
     {
       title: 'Portfolio',
@@ -109,33 +93,17 @@ const Projects = () => {
       github: 'https://github.com/varunsanjay123/Portfolio'
     },
     {
-      title: 'Sales & Revenue Dashboard',
+      title: 'Car Theft Analysis',
       category: 'Data Analytics',
-      description: 'Interactive data visualization dashboard tracking real-time sales metrics and regional performance.',
+      description: 'Comprehensive data analytics dashboard sorting and analyzing car theft patterns to identify high-risk zones and actionable demographic trends.',
       image: projectImage,
-      demo: '#',
-      github: 'https://github.com/varunsanjay123'
+      // demo: '#',
+      github: 'https://github.com/varunsanjay123/Car_theft_Analysis'
     },
     {
-      title: 'Supply Chain Analytics',
+      title: 'Covid-19 Data Analysis',
       category: 'Data Analytics',
-      description: 'Comprehensive Tableau dashboard analyzing logistics data to optimize shipping efficiency.',
-      image: projectImage,
-      demo: '#',
-      github: 'https://github.com/varunsanjay123'
-    },
-    {
-      title: 'Customer Segmentation Model',
-      category: 'Data Analytics',
-      description: 'Data analytics model sorting user bases into actionable demographics using Python.',
-      image: projectImage,
-      demo: '#',
-      github: 'https://github.com/varunsanjay123'
-    },
-    {
-      title: 'Financial Fraud Detection',
-      category: 'Data Analytics',
-      description: 'Data tracking dashboard utilizing anomalous pattern recognition to identify fraud.',
+      description: 'Interactive data visualization dashboard tracking real-time Covid-19 metrics, regional impact, and statistical trends across different timelines.',
       image: projectImage,
       demo: '#',
       github: 'https://github.com/varunsanjay123'

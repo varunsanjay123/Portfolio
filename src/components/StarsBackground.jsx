@@ -47,17 +47,17 @@ const SceneContent = () => {
       </Float>
 
       {/* Saturn-like Planet */}
-      <Float speed={1.2} rotationIntensity={1.5}>
-        <mesh position={[-9, -6, -20]}>
-          <sphereGeometry args={[2.5, 32, 32]} />
-          <meshStandardMaterial color="#b818d4ff" roughness={0.4} />
-          <mesh rotation={[Math.PI / 2.5, 0, 0]}>
-            <torusGeometry args={[4.5, 0.05, 16, 100]} />
-            <meshStandardMaterial color="#7219bbff" opacity={0.8} transparent />
-          </mesh>
-        </mesh>
-      </Float>
+    <Float speed={1.2} rotationIntensity={1.5}>
+  <mesh position={[-9, -6, -20]}>
+    <sphereGeometry args={[2.5, 32, 32]} />
+    <meshStandardMaterial color="#44efe6ff" roughness={0.4} />
 
+    <mesh rotation={[Math.PI / 2.5, 0, 0]}>
+      <torusGeometry args={[4.5, 0.05, 16, 100]} />
+      <meshStandardMaterial color="#528294" opacity={0.8} transparent />
+    </mesh>
+  </mesh>
+</Float>
       <Stars radius={100} depth={50} count={5000} factor={6} saturation={0.5} fade speed={1} />
     </group>
   );
