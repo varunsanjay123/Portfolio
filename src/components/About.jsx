@@ -1,8 +1,32 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 import profileImage from '../assets/profile.jpeg';
 import resumePdf from '../assets/Varun_Sanjay_P_Resume.pdf';
+
+const timeline = [
+  {
+    title: "Junior Frontend Developer",
+    organization: "FNEXT",
+    date: "May 2025 - June 2025",
+    icon: <FaBriefcase />,
+    type: "experience"
+  },
+  {
+    title: "B.E. Computer Science and Engineering",
+    organization: "KGiSL Institute of Technology",
+    date: "2026 - Graduated",
+    icon: <FaGraduationCap />,
+    type: "education"
+  },
+  {
+    title: "Higher Secondary",
+    organization: "Sri Kumaran Matriculation Higher Secondary School",
+    date: "2020 - 2022",
+    icon: <FaGraduationCap />,
+    type: "education"
+  }
+];
 
 const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -27,7 +51,7 @@ const About = () => {
           About Me
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           {/* Text Content Card with Spotlight */}
           <div className="gradient-border-wrapper h-fit self-center">
             <motion.div
@@ -47,11 +71,9 @@ const About = () => {
               
               <div className="relative z-10">
                 <p className="text-lg leading-relaxed mb-6 text-gray-300">
-                  I am a Computer Science student passionate about building real-world applications and exploring the cosmos of software development.
-                </p>
+                 I’m a Computer Science student who enjoys building real-world applications and working with data. I like creating things that people can use while also understanding the data behind them to make better decisions.                </p>
                 <p className="text-lg leading-relaxed mb-10 text-gray-300">
-                  Skilled in Java, C, React, HTML, CSS, JavaScript, with a strong emphasis on continuous learning and modern UI/UX design.
-                </p>
+                  I have worked with Java, C, React, HTML, CSS, and JavaScript, and I also use SQL, Excel, and basic data analysis tools. I’m always learning new skills and trying to improve both my development and analytical thinking.</p>
                 <motion.a
                   whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(37,99,235,0.4)" }}
                   whileTap={{ scale: 0.95 }}
@@ -81,6 +103,61 @@ const About = () => {
               />
             </div>
           </motion.div>
+        </div>
+
+        {/* Timeline Section */}
+        <div className="mt-32">
+          <motion.h3 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl font-bold text-white text-center mb-16"
+          >
+            Education & Experience
+          </motion.h3>
+
+          <div className="max-w-3xl mx-auto relative">
+            {/* Vertical Line */}
+            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-purple-600 to-transparent rounded-full"></div>
+
+            <div className="space-y-12">
+              {timeline.map((item, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className={`relative flex flex-col md:flex-row items-start md:items-center justify-between ${
+                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}
+                >
+                  {/* Icon */}
+                  <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[#0a0a0a] border-4 border-blue-600 flex items-center justify-center text-white text-xl z-10 shadow-[0_0_15px_rgba(37,99,235,0.5)]">
+                    {item.icon}
+                  </div>
+
+                  {/* Spacer for empty side on desktop */}
+                  <div className="hidden md:block w-5/12"></div>
+
+                  {/* Content Card */}
+                  <div className={`w-full md:w-5/12 pl-20 md:pl-0 ${
+                    index % 2 === 0 ? 'text-left md:text-right md:pr-8' : 'text-left md:pl-8'
+                  }`}>
+                    <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-xl hover:bg-white/10 transition-all duration-300 group">
+                      <span className="text-blue-400 font-bold text-sm tracking-wider uppercase mb-2 block">{item.date}</span>
+                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{item.title}</h4>
+                      <span className={`text-gray-400 text-sm font-medium flex items-center gap-2 ${
+                        index % 2 === 0 ? 'justify-start md:justify-end' : 'justify-start'
+                      }`}>
+                         {item.type === 'education' ? <FaGraduationCap className="text-gray-500" /> : <FaBriefcase className="text-gray-500" />}
+                         {item.organization}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

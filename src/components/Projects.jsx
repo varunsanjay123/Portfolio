@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import projectImage from '../assets/project1.png';
+import printHubImg from '../assets/Print-HUB.png';
+import portfolioImg from '../assets/Portfolio.png';
+import carTheftImg from '../assets/CarTheft Analysis.png';
+import covidImg from '../assets/Covid-19.png';
 
 const ProjectCard = ({ project }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -33,7 +36,7 @@ const ProjectCard = ({ project }) => {
         />
 
         <div className="h-64 overflow-hidden relative">
-           <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+           <img src={project.image} alt={project.title} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
            <span className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] uppercase tracking-wider px-3 py-1 rounded-md font-bold">
               {project.category}
@@ -45,16 +48,18 @@ const ProjectCard = ({ project }) => {
            <p className="text-gray-400 text-sm flex-grow leading-relaxed mb-8">{project.description}</p>
            
            <div className="flex space-x-4">
-             <motion.a 
-               whileHover={{ scale: 1.05 }}
-               whileTap={{ scale: 0.95 }}
-               href={project.demo} 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold transition-all duration-300 text-sm shadow-lg shadow-blue-900/20"
-             >
-                <FaExternalLinkAlt className="mr-2" /> Live Demo
-             </motion.a>
+             {project.demo && project.demo !== '#' && (
+               <motion.a 
+                 whileHover={{ scale: 1.05 }}
+                 whileTap={{ scale: 0.95 }}
+                 href={project.demo} 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold transition-all duration-300 text-sm shadow-lg shadow-blue-900/20"
+               >
+                  <FaExternalLinkAlt className="mr-2" /> Live Demo
+               </motion.a>
+             )}
              <motion.a 
                whileHover={{ scale: 1.05 }}
                whileTap={{ scale: 0.95 }}
@@ -80,7 +85,7 @@ const Projects = () => {
       title: 'Print-HUB',
       category: 'Development',
       description: 'Web platform for document printing with real-time tracking and admin panel',
-      image: projectImage,
+      image: printHubImg,
       demo: 'https://print-hub-4to1.vercel.app/',
       github: 'https://github.com/varunsanjay123/PrintHub'
     },
@@ -88,7 +93,7 @@ const Projects = () => {
       title: 'Portfolio',
       category: 'Development',
       description: 'Passionate developer focused on building clean, responsive, and impactful web application',
-      image: projectImage,
+      image: portfolioImg,
       demo: '#',
       github: 'https://github.com/varunsanjay123/Portfolio'
     },
@@ -96,15 +101,14 @@ const Projects = () => {
       title: 'Car Theft Analysis',
       category: 'Data Analytics',
       description: 'Comprehensive data analytics dashboard sorting and analyzing car theft patterns to identify high-risk zones and actionable demographic trends.',
-      image: projectImage,
-      // demo: '#',
+      image: carTheftImg,
       github: 'https://github.com/varunsanjay123/Car_theft_Analysis'
     },
     {
       title: 'Covid-19 Data Analysis',
       category: 'Data Analytics',
       description: 'Interactive data visualization dashboard tracking real-time Covid-19 metrics, regional impact, and statistical trends across different timelines.',
-      image: projectImage,
+      image: covidImg,
       demo: '#',
       github: 'https://github.com/varunsanjay123'
     }
@@ -149,6 +153,24 @@ const Projects = () => {
               <ProjectCard key={project.title} project={project} />
             ))}
           </AnimatePresence>
+        </motion.div>
+
+        {/* View More GitHub Button */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex justify-center mt-16"
+        >
+          <a 
+            href="https://github.com/varunsanjay123?tab=repositories" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/50 text-white rounded-xl font-bold transition-all duration-300 group shadow-lg"
+          >
+            <FaGithub className="text-xl group-hover:scale-110 transition-transform" />
+            For More Visit GitHub
+          </a>
         </motion.div>
       </div>
     </section>

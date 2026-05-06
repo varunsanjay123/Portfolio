@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StarsBackground from './components/StarsBackground';
 import CustomCursor from './components/CustomCursor';
+import LoadingScreen from './components/LoadingScreen';
 
 import { useScroll, motion, useSpring, useTransform } from 'framer-motion';
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="min-h-screen relative">
+      <LoadingScreen />
       <CustomCursor />
       <StarsBackground />
       
