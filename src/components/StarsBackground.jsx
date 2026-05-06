@@ -163,7 +163,7 @@ const SceneContent = () => {
       {/* Simplified Planets for Stability */}
       <Float speed={1}>
         <mesh position={[8, -4, -15]}>
-          <sphereGeometry args={[2, 32, 32]} />
+          <sphereGeometry args={[2, 16, 16]} />
           <meshStandardMaterial color="#ef4444" />
         </mesh>
       </Float>
@@ -171,11 +171,11 @@ const SceneContent = () => {
       {/* Saturn-like Planet */}
       <Float speed={1.2} rotationIntensity={1.5}>
         <mesh position={[-9, -6, -20]}>
-          <sphereGeometry args={[2.5, 32, 32]} />
+          <sphereGeometry args={[2.5, 16, 16]} />
           <meshStandardMaterial color="#44efe6" roughness={0.4} />
 
           <mesh rotation={[Math.PI / 2.5, 0, 0]}>
-            <torusGeometry args={[4.5, 0.05, 16, 100]} />
+            <torusGeometry args={[4.5, 0.05, 16, 32]} />
             <meshStandardMaterial color="#528294" opacity={0.8} transparent />
           </mesh>
         </mesh>
@@ -184,14 +184,14 @@ const SceneContent = () => {
       {/* Additional Planets */}
       <Float speed={2}>
         <mesh position={[12, 8, -25]}>
-          <sphereGeometry args={[3, 32, 32]} />
+          <sphereGeometry args={[3, 16, 16]} />
           <meshStandardMaterial color="#10b981" roughness={0.7} />
         </mesh>
       </Float>
 
       <Float speed={0.8}>
         <mesh position={[-15, 10, -30]}>
-          <sphereGeometry args={[1.8, 32, 32]} />
+          <sphereGeometry args={[1.8, 16, 16]} />
           <meshStandardMaterial color="#f59e0b" roughness={0.9} />
         </mesh>
       </Float>
@@ -205,7 +205,7 @@ const SceneContent = () => {
         <Satellite position={[-8, -4, -12]} rotation={[0.4, 0.2, 0.1]} scale={0.6} />
       </Float>
 
-      <Stars radius={100} depth={50} count={5000} factor={6} saturation={0.5} fade speed={1} />
+      <Stars radius={100} depth={50} count={1500} factor={6} saturation={0.5} fade speed={1} />
     </group>
   );
 };
@@ -213,7 +213,7 @@ const SceneContent = () => {
 const StarsBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 bg-black">
-      <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+      <Canvas camera={{ position: [0, 0, 5], fov: 60 }} dpr={[1, 1.5]}>
         <SceneContent />
       </Canvas>
     </div>
