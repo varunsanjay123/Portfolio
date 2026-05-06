@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaRocket, FaArrowRight, FaRegUser, FaChevronDown } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
@@ -11,7 +12,8 @@ const Hero = () => {
         {[
           { icon: FaGithub, link: "https://github.com/varunsanjay123" },
           { icon: FaLinkedinIn, link: "https://www.linkedin.com/in/varunsanjay123/" },
-          { icon: FaEnvelope, link: "mailto:apvarunsanjay123@gmail.com" }
+          { icon: FaEnvelope, link: "mailto:apvarunsanjay123@gmail.com" },
+          { icon: SiLeetcode, link: "https://leetcode.com/u/Varun_Sanjay/" }
         ].map((social, i) => {
           const Icon = social.icon;
           return (

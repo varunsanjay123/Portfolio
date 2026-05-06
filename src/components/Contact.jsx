@@ -126,7 +126,7 @@ const Contact = () => {
                  
                  <div>
                    <span className="text-gray-500 text-sm font-bold uppercase tracking-widest block mb-4">Social Profiles</span>
-                   <div className="flex space-x-8">
+                   <div className="flex flex-wrap gap-6">
                      <a href="https://github.com/varunsanjay123" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-125">
                        <FaGithub className="text-4xl" />
                      </a>
