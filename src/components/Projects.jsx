@@ -94,7 +94,7 @@ const Projects = () => {
       category: 'Development',
       description: 'Passionate developer focused on building clean, responsive, and impactful web application',
       image: portfolioImg,
-      demo: '#',
+      demo: 'https://varunsanjay.netlify.app/',
       github: 'https://github.com/varunsanjay123/Portfolio'
     },
     {
